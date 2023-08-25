@@ -2,4 +2,4 @@
 ISO to full country name converter
 
 
-[Live preview] (https://iso-to-country-converter.pages.dev)
+[Live preview](https://iso-to-country-converter.pages.dev)
