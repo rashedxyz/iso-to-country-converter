@@ -36,11 +36,20 @@ function getFullCountryNameFromISO(data, codes) {
   return countryNamesWithCount;
 }
 
+const countryCodesFormElem = document.querySelector("#countryCodesForm");
 const countryCodesTextareaElem = document.querySelector("#countryCodes");
 const countryNamesOutputElem = document.querySelector("#countryNames");
+const resetButtonElem = document.querySelector("#resetFormBtn");
 
-const countryCodesTextareaElemChangeHandler = (e) => {
-  const inputValue = e.target.value;
+
+const resetBtnClickHandler = () => {
+  countryCodesTextareaElem.value = "";
+  countryNamesOutputElem.innerHTML = "";
+}
+
+const countryCodesFormSubmitHandler = (e) => {
+  e.preventDefault();
+  const inputValue = countryCodesTextareaElem.value;
   const filteredValue = inputValue
     .split("\n")
     .filter((elem) => (elem ? true : false));
@@ -61,7 +70,9 @@ const countryCodesTextareaElemChangeHandler = (e) => {
   }
 };
 
-countryCodesTextareaElem.addEventListener(
-  "input",
-  countryCodesTextareaElemChangeHandler
+countryCodesFormElem.addEventListener(
+  "submit",
+  countryCodesFormSubmitHandler
 );
+
+resetButtonElem.addEventListener('click', resetBtnClickHandler);

@@ -16,10 +16,21 @@
     <div class="row justify-content-center">
       <div class="col-8">
         <div class="mb-3">
-          <label for="countryCodes" class="form-label">ISO Country Codes:</label>
-          <textarea class="form-control" id="countryCodes" rows="8" placeholder="Please input one code on each line"></textarea>
+          <form id="countryCodesForm">
+            <label for="countryCodes" class="form-label">ISO Country Codes</label>
+            <textarea class="form-control" id="countryCodes" rows="8" placeholder="Please input one code on each line"></textarea>
+            <div class="mt-3"></div>
+            <div class="row">
+              <div class="col">
+                <button type="submit" class="btn btn-primary">Get Country Names</button>
+              </div>
+              <div class="col text-end">
+                <button type="button" class="btn btn-warning" id="resetFormBtn">Reset</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="card">
+        <div class="card mt-5">
           <div class="card-header">
             Country Names with count will appear below
           </div>
